@@ -58,6 +58,19 @@
             opacity: 1;
             pointer-events: auto; /* Aktifkan klik saat muncul */
         }
+        /* Penyesuaian responsif untuk tombol carousel */
+        @media (max-width: 768px) {
+            #prev-btn, #next-btn {
+                position: static !important; /* Hapus absolute positioning */
+                transform: none !important;
+                margin-top: 1rem;
+                display: inline-block;
+            }
+            .carousel-controls {
+                text-align: center;
+                margin-top: 1rem;
+            }
+        }
     </style>
 </head>
 <body class="bg-white text-gray-800">
@@ -96,46 +109,43 @@
 
     <section id="home" class="min-h-[calc(100vh-4rem)] flex flex-col justify-center items-center text-center px-6 hero-bg">
         <div class="hero-content text-white">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4 fade-in">FADHILA AQIQAH</h1>
-            <p class="text-lg md:text-xl font-medium text-white/90 fade-in" style="transition-delay:0.2s">Pusat Aqiqah Terpercaya di Tasikmalaya</p>
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 fade-in">FADHILA AQIQAH</h1>
+            <p class="text-base sm:text-lg md:text-xl font-medium text-white/90 fade-in" style="transition-delay:0.2s">Pusat Aqiqah Terpercaya di Tasikmalaya</p>
             
-            <div class="mt-4 text-xl md:text-xl font-semibold mb-6 fade-in" style="transition-delay:0.4s">
+            <div class="mt-4 text-lg sm:text-xl font-semibold mb-6 fade-in" style="transition-delay:0.4s">
                 Layanan Aqiqah <span class="text-emerald-400" id="typing-text"></span> dan siap antar. Lebih mudah, praktis, dan terpercaya
             </div>
             
-            <a href="https://wa.me/6281234567890" target="_blank" class="mt-6 px-8 py-3 bg-emerald-600 text-white rounded-full text-lg shadow-lg hover:bg-emerald-700 transition fade-in" style="transition-delay:0.6s">Pesan Sekarang</a>
+            <a href="https://wa.me/6281234567890" target="_blank" class="mt-6 px-8 py-3 bg-emerald-600 text-white rounded-full text-base sm:text-lg shadow-lg hover:bg-emerald-700 transition fade-in" style="transition-delay:0.6s">Pesan Sekarang</a>
         </div>
     </section>
 
-    <section id="tentang" class="py-20 px-6 bg-teal-50/20">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+    <section id="tentang" class="py-16 sm:py-20 px-4 sm:px-6 bg-teal-50/20">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             
-            <div class="fade-in">
-                
-                <img src="assets/images/aqiqah.jpg" alt="Ilustrasi Aqiqah Fadhila" class="rounded-xl shadow-xl p-4 h-96 w-96 hidden md:block" /> 
+            <div class="fade-in order-2 md:order-1">
+                <img src="assets/images/aqiqah.jpg" alt="Ilustrasi Aqiqah Fadhila" class="rounded-xl shadow-xl w-full h-auto object-cover max-h-96" /> 
             </div>
 
-            <div class="fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-emerald-700">Mengenal Fadhila Aqiqah</h2>
-                <p class="text-gray-700 mb-4 text-lg">
+            <div class="fade-in order-1 md:order-2">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4 md:mb-6 text-emerald-700 text-center md:text-left">Mengenal Fadhila Aqiqah</h2>
+                <p class="text-gray-700 mb-4 text-base sm:text-lg">
                     **Fadhila Aqiqah** telah menjadi pilihan utama keluarga di Tasikmalaya dan sekitarnya untuk melaksanakan ibadah aqiqah dengan praktis dan syar'i.
                 </p>
-                <p class="text-gray-600 mb-4">
+                <p class="text-gray-600 mb-4 text-sm sm:text-base">
                     Kami hadir untuk menghilangkan kerepotan Anda dalam memilih hewan, proses penyembelihan, hingga pengolahan masakan. Semua proses kami lakukan dengan memperhatikan kaidah syariat Islam, kebersihan, dan cita rasa masakan yang lezat.
                 </p>
-                <p class="text-gray-600">
-                    Kami menyediakan berbagai pilihan paket yang dapat disesuaikan dengan kebutuhan dan anggaran keluarga Anda. Fokus kami adalah layanan terbaik dan kualitas terjamin.
-                </p>
-                <a href="#paket" class="mt-6 inline-block text-emerald-600 font-semibold hover:text-emerald-800 transition">
+                <a href="#paket" class="mt-4 inline-block text-emerald-600 font-semibold hover:text-emerald-800 transition text-sm sm:text-base">
                     Lihat Pilihan Paket Kami <i class="fas fa-arrow-right ml-1 text-sm"></i>
                 </a>
             </div>
 
         </div>
     </section>
-    <section id="paket" class="py-20 px-6 bg-white">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 fade-in text-emerald-700">Paket Aqiqah</h2>
-        <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+    <section id="paket" class="py-16 sm:py-20 px-4 sm:px-6 bg-white">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 fade-in text-emerald-700">Pilihan Paket Aqiqah</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
 
             <div class="p-6 border rounded-2xl shadow-sm fade-in hover:shadow-xl transition bg-gradient-to-br from-white to-teal-50/40">
                 <h3 class="text-xl font-semibold mb-2 text-emerald-600">Paket Hemat</h3>
@@ -170,74 +180,80 @@
         </div>
     </section>
 
-    <section id="keunggulan" class="py-20 px-6 bg-teal-50/40">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 fade-in text-emerald-700">Kenapa Memilih Kami?</h2>
-        <div class="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+    <section id="keunggulan" class="py-16 sm:py-20 px-4 sm:px-6 bg-teal-50/40">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 fade-in text-emerald-700">Kenapa Memilih Kami?</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-6xl mx-auto">
             
             <div class="text-center p-4 fade-in">
-                <p class="text-xl font-semibold mb-2 text-emerald-600">Halal & Higienis</p>
-                <p class="text-gray-600 text-sm">Penyembelihan sesuai syariat dan higienis.</p>
+                <i class="fas fa-handshake-angle text-4xl text-emerald-600 mb-3"></i>
+                <p class="text-lg font-semibold mb-1 text-emerald-600">Halal & Higienis</p>
+                <p class="text-gray-600 text-xs sm:text-sm">Penyembelihan sesuai syariat dan higienis.</p>
             </div>
 
             <div class="text-center p-4 fade-in">
-                <p class="text-xl font-semibold mb-2 text-emerald-600">Harga Terjangkau</p>
-                <p class="text-gray-600 text-sm">Pilihan paket fleksibel dan ekonomis.</p>
+                <i class="fas fa-tags text-4xl text-emerald-600 mb-3"></i>
+                <p class="text-lg font-semibold mb-1 text-emerald-600">Harga Terjangkau</p>
+                <p class="text-gray-600 text-xs sm:text-sm">Pilihan paket fleksibel dan ekonomis.</p>
             </div>
 
             <div class="text-center p-4 fade-in">
-                <p class="text-xl font-semibold mb-2 text-emerald-600">Siap Antar</p>
-                <p class="text-gray-600 text-sm">Pengantaran cepat & aman.</p>
+                <i class="fas fa-truck text-4xl text-emerald-600 mb-3"></i>
+                <p class="text-lg font-semibold mb-1 text-emerald-600">Siap Antar</p>
+                <p class="text-gray-600 text-xs sm:text-sm">Pengantaran cepat & aman.</p>
             </div>
 
             <div class="text-center p-4 fade-in">
-                <p class="text-xl font-semibold mb-2 text-emerald-600">Rasa Terjamin</p>
-                <p class="text-gray-600 text-sm">Masakan enak dan selalu fresh.</p>
+                <i class="fas fa-utensils text-4xl text-emerald-600 mb-3"></i>
+                <p class="text-lg font-semibold mb-1 text-emerald-600">Rasa Terjamin</p>
+                <p class="text-gray-600 text-xs sm:text-sm">Masakan enak dan selalu fresh.</p>
             </div>
 
         </div>
     </section>
 
-    <section id="testimoni" class="py-20 px-6 bg-white">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 fade-in text-emerald-700">Testimoni Pelanggan</h2>
+    <section id="testimoni" class="py-16 sm:py-20 px-4 sm:px-6 bg-white">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 fade-in text-emerald-700">Testimoni Pelanggan</h2>
         <div class="max-w-xl mx-auto relative">
 
             <div class="carousel-container">
                 <div class="carousel-track" id="testimonial-track">
                     <div class="carousel-item">
                         <div class="p-6 border rounded-xl shadow-lg bg-gradient-to-br from-white to-teal-50/30">
-                            <p class="text-gray-700 italic mb-4 text-center text-lg">“Pelayanannya **cepat** dan masakannya **enak banget**. Terbaik!”</p>
+                            <p class="text-gray-700 italic mb-4 text-center text-base sm:text-lg">“Pelayanannya **cepat** dan masakannya **enak banget**. Terbaik!”</p>
                             <p class="font-semibold text-emerald-700 text-center">— Rini, Tasikmalaya</p>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <div class="p-6 border rounded-xl shadow-lg bg-gradient-to-br from-white to-emerald-50/30">
-                            <p class="text-gray-700 italic mb-4 text-center text-lg">“Harga **bersahabat**, rasa **mantap**, sangat recommended. Prosesnya syar'i.”</p>
+                            <p class="text-gray-700 italic mb-4 text-center text-base sm:text-lg">“Harga **bersahabat**, rasa **mantap**, sangat recommended. Prosesnya syar'i.”</p>
                             <p class="font-semibold text-emerald-700 text-center">— Andri, Singaparna</p>
                         </div>
                     </div>
                      <div class="carousel-item">
                         <div class="p-6 border rounded-xl shadow-lg bg-gradient-to-br from-white to-teal-50/30">
-                            <p class="text-gray-700 italic mb-4 text-center text-lg">“Paketnya **lengkap**, tidak perlu repot. Terima kasih Fadhila Aqiqah!”</p>
+                            <p class="text-gray-700 italic mb-4 text-center text-base sm:text-lg">“Paketnya **lengkap**, tidak perlu repot. Terima kasih Fadhila Aqiqah!”</p>
                             <p class="font-semibold text-emerald-700 text-center">— Keluarga Budi, Ciamis</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <button id="prev-btn" class="absolute top-1/2 -left-10 transform -translate-y-1/2 bg-emerald-600 text-white p-3 rounded-full shadow-lg hover:bg-emerald-700 transition">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button id="next-btn" class="absolute top-1/2 -right-10 transform -translate-y-1/2 bg-emerald-600 text-white p-3 rounded-full shadow-lg hover:bg-emerald-700 transition">
-                <i class="fas fa-chevron-right"></i>
-            </button>
-
+            <div class="carousel-controls flex justify-center md:justify-start space-x-4 md:space-x-0">
+                <button id="prev-btn" class="md:absolute top-1/2 -left-10 transform md:-translate-y-1/2 bg-emerald-600 text-white p-3 rounded-full shadow-lg hover:bg-emerald-700 transition">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button id="next-btn" class="md:absolute top-1/2 -right-10 transform md:-translate-y-1/2 bg-emerald-600 text-white p-3 rounded-full shadow-lg hover:bg-emerald-700 transition">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
         </div>
     </section>
 
-    <section id="kontak" class="py-20 px-6 bg-gradient-to-r from-emerald-600 to-teal-500 text-white text-center">
+    <section id="kontak" class="py-16 sm:py-20 px-4 sm:px-6 bg-gradient-to-r from-emerald-600 to-teal-500 text-white text-center">
         <h2 class="text-3xl md:text-4xl font-bold mb-4 fade-in">Siap Melaksanakan Aqiqah?</h2>
-        <p class="max-w-xl mx-auto text-white/90 fade-in">Kami siap membantu menyediakan paket aqiqah terbaik untuk keluarga Anda.</p>
-        <a href="https://wa.me/6281234567890" target="_blank" class="mt-6 inline-block px-10 py-4 bg-white text-emerald-700 rounded-full shadow-xl font-semibold hover:bg-gray-100 transition fade-in">Chat Sekarang</a>
+        <p class="max-w-xl mx-auto text-white/90 fade-in text-base sm:text-lg">Kami siap membantu menyediakan paket aqiqah terbaik untuk keluarga Anda.</p>
+        <a href="https://wa.me/6281234567890" target="_blank" class="mt-6 inline-block px-8 sm:px-10 py-3 sm:py-4 bg-white text-emerald-700 rounded-full shadow-xl font-semibold hover:bg-gray-100 transition fade-in text-base sm:text-lg">Chat Sekarang</a>
     </section>
 
     <a href="https://wa.me/6281234567890" target="_blank" class="fixed bottom-6 right-6 bg-emerald-600 text-white p-4 rounded-full shadow-lg text-xl hover:bg-emerald-700 transition z-50">💬</a>
@@ -293,8 +309,6 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             setTimeout(type, 500);
-            
-            // Inisialisasi posisi carousel
             updateCarousel();
         });
         
@@ -306,7 +320,6 @@
         let currentIndex = 0;
 
         function updateCarousel() {
-            // Perlu memeriksa apakah elemen ada sebelum mengakses properti
             if (itemsList.length === 0) return; 
             const itemWidth = itemsList[0].clientWidth;
             const offset = -currentIndex * itemWidth;
@@ -317,7 +330,7 @@
             if (currentIndex < itemsList.length - 1) {
                 currentIndex++;
             } else {
-                currentIndex = 0; // Kembali ke awal
+                currentIndex = 0; 
             }
             updateCarousel();
         });
@@ -326,7 +339,7 @@
             if (currentIndex > 0) {
                 currentIndex--;
             } else {
-                currentIndex = itemsList.length - 1; // Kembali ke akhir
+                currentIndex = itemsList.length - 1; 
             }
             updateCarousel();
         });
@@ -348,7 +361,6 @@
         window.onscroll = function() { scrollFunction() };
 
         function scrollFunction() {
-            // Tampilkan jika scroll lebih dari 300px (atau tinggi Hero Section)
             if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
                 scrollToTopBtn.classList.add('show');
             } else {
