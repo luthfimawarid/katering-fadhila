@@ -17,7 +17,7 @@ Google Fonts – Inter
 
 1. Clone repository:
 
-git clone https://github.com/username/fadhila-aqiqah-landing.git
+git clone https://github.com/luthfimawarid/katering-fadhila.git
 
 
 2. Masuk folder:
