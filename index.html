@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FADHILA AQIQAH PUSAT TASIKMALAYA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.8s ease; }
+        .fade-in.show { opacity: 1; transform: translateY(0); }
+        
+        /* Style untuk Hero Section dengan gambar latar belakang */
+        .hero-bg {
+            background-image: url('/4719.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .hero-bg::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* Overlay gelap */
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        /* Style untuk Testimoni Carousel */
+        .carousel-container {
+            overflow: hidden;
+        }
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel-item {
+            flex: 0 0 100%;
+            width: 100%;
+            padding: 0 1rem;
+        }
+        /* Style untuk Tombol Kembali ke Atas */
+        #scrollToTopBtn {
+            transition: opacity 0.3s ease-in-out;
+            opacity: 0;
+            pointer-events: none; /* Nonaktifkan klik saat tersembunyi */
+        }
+        #scrollToTopBtn.show {
+            opacity: 1;
+            pointer-events: auto; /* Aktifkan klik saat muncul */
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+
+    <nav class="fixed top-0 left-0 right-0 bg-white shadow-md z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="#home" class="text-xl font-bold text-emerald-700">FADHILA AQIQAH</a>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-600 hover:text-emerald-600 transition">Beranda</a>
+                    <a href="#tentang" class="text-gray-600 hover:text-emerald-600 transition">Tentang Kami</a>
+                    <a href="#paket" class="text-gray-600 hover:text-emerald-600 transition">Paket</a>
+                    <a href="#keunggulan" class="text-gray-600 hover:text-emerald-600 transition">Keunggulan</a>
+                    <a href="#testimoni" class="text-gray-600 hover:text-emerald-600 transition">Testimoni</a>
+                    <a href="#kontak" class="px-3 py-1 bg-emerald-600 text-white rounded-full hover:bg-emerald-700 transition">Pesan</a>
+                </div>
+
+                <button id="menu-button" class="md:hidden text-gray-600 hover:text-emerald-600">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <a href="#home" class="block px-4 py-2 text-gray-600 hover:bg-emerald-50" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Beranda</a>
+            <a href="#tentang" class="block px-4 py-2 text-gray-600 hover:bg-emerald-50" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Tentang Kami</a>
+            <a href="#paket" class="block px-4 py-2 text-gray-600 hover:bg-emerald-50" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Paket</a>
+            <a href="#keunggulan" class="block px-4 py-2 text-gray-600 hover:bg-emerald-50" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Keunggulan</a>
+            <a href="#testimoni" class="block px-4 py-2 text-gray-600 hover:bg-emerald-50" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Testimoni</a>
+            <a href="#kontak" class="block px-4 py-2 bg-emerald-50 text-emerald-700 hover:bg-emerald-100" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Pesan Sekarang</a>
+        </div>
+    </nav>
+    
+    <div class="h-16"></div> 
+
+    <section id="home" class="min-h-[calc(100vh-4rem)] flex flex-col justify-center items-center text-center px-6 hero-bg">
+        <div class="hero-content text-white">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 fade-in">FADHILA AQIQAH</h1>
+            <p class="text-lg md:text-xl font-medium text-white/90 fade-in" style="transition-delay:0.2s">Pusat Aqiqah Terpercaya di Tasikmalaya</p>
+            
+            <div class="mt-4 text-xl md:text-xl font-semibold mb-6 fade-in" style="transition-delay:0.4s">
+                Layanan Aqiqah <span class="text-emerald-400" id="typing-text"></span> dan siap antar. Lebih mudah, praktis, dan terpercaya
+            </div>
+            
+            <a href="https://wa.me/6281234567890" target="_blank" class="mt-6 px-8 py-3 bg-emerald-600 text-white rounded-full text-lg shadow-lg hover:bg-emerald-700 transition fade-in" style="transition-delay:0.6s">Pesan Sekarang</a>
+        </div>
+    </section>
+
+    <section id="tentang" class="py-20 px-6 bg-teal-50/20">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            
+            <div class="fade-in">
+                
+                <img src="/aqiqah.jpg" alt="Ilustrasi Aqiqah Fadhila" class="rounded-xl shadow-xl p-4 h-96 w-96 hidden md:block" /> 
+            </div>
+
+            <div class="fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-emerald-700">Mengenal Fadhila Aqiqah</h2>
+                <p class="text-gray-700 mb-4 text-lg">
+                    **Fadhila Aqiqah** telah menjadi pilihan utama keluarga di Tasikmalaya dan sekitarnya untuk melaksanakan ibadah aqiqah dengan praktis dan syar'i.
+                </p>
+                <p class="text-gray-600 mb-4">
+                    Kami hadir untuk menghilangkan kerepotan Anda dalam memilih hewan, proses penyembelihan, hingga pengolahan masakan. Semua proses kami lakukan dengan memperhatikan kaidah syariat Islam, kebersihan, dan cita rasa masakan yang lezat.
+                </p>
+                <p class="text-gray-600">
+                    Kami menyediakan berbagai pilihan paket yang dapat disesuaikan dengan kebutuhan dan anggaran keluarga Anda. Fokus kami adalah layanan terbaik dan kualitas terjamin.
+                </p>
+                <a href="#paket" class="mt-6 inline-block text-emerald-600 font-semibold hover:text-emerald-800 transition">
+                    Lihat Pilihan Paket Kami <i class="fas fa-arrow-right ml-1 text-sm"></i>
+                </a>
+            </div>
+
+        </div>
+    </section>
+    <section id="paket" class="py-20 px-6 bg-white">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 fade-in text-emerald-700">Paket Aqiqah</h2>
+        <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+            <div class="p-6 border rounded-2xl shadow-sm fade-in hover:shadow-xl transition bg-gradient-to-br from-white to-teal-50/40">
+                <h3 class="text-xl font-semibold mb-2 text-emerald-600">Paket Hemat</h3>
+                <p class="text-gray-600 mb-4">Mulai dari 1.3 Juta</p>
+                <ul class="text-gray-700 text-sm space-y-2">
+                    <li>✔ 1 Ekor kambing</li>
+                    <li>✔ Nasi kotak lengkap</li>
+                    <li>✔ Free sambal & kerupuk</li>
+                </ul>
+            </div>
+
+            <div class="p-6 border rounded-2xl shadow-sm fade-in hover:shadow-xl transition bg-gradient-to-br from-white to-emerald-50/40">
+                <h3 class="text-xl font-semibold mb-2 text-emerald-600">Paket Standar</h3>
+                <p class="text-gray-600 mb-4">Mulai dari 1.5 Juta</p>
+                <ul class="text-gray-700 text-sm space-y-2">
+                    <li>✔ 1 Ekor kambing premium</li>
+                    <li>✔ Olahan gulai + sate</li>
+                    <li>✔ Nasi kotak lengkap</li>
+                </ul>
+            </div>
+
+            <div class="p-6 border rounded-2xl shadow-sm fade-in hover:shadow-xl transition bg-gradient-to-br from-white to-teal-50/50">
+                <h3 class="text-xl font-semibold mb-2 text-emerald-600">Paket Lengkap</h3>
+                <p class="text-gray-600 mb-4">Mulai dari 1.8 Juta</p>
+                <ul class="text-gray-700 text-sm space-y-2">
+                    <li>✔ 1 Ekor kambing super</li>
+                    <li>✔ 2 macam olahan</li>
+                    <li>✔ Gratis ongkir</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="keunggulan" class="py-20 px-6 bg-teal-50/40">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 fade-in text-emerald-700">Kenapa Memilih Kami?</h2>
+        <div class="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+            
+            <div class="text-center p-4 fade-in">
+                <p class="text-xl font-semibold mb-2 text-emerald-600">Halal & Higienis</p>
+                <p class="text-gray-600 text-sm">Penyembelihan sesuai syariat dan higienis.</p>
+            </div>
+
+            <div class="text-center p-4 fade-in">
+                <p class="text-xl font-semibold mb-2 text-emerald-600">Harga Terjangkau</p>
+                <p class="text-gray-600 text-sm">Pilihan paket fleksibel dan ekonomis.</p>
+            </div>
+
+            <div class="text-center p-4 fade-in">
+                <p class="text-xl font-semibold mb-2 text-emerald-600">Siap Antar</p>
+                <p class="text-gray-600 text-sm">Pengantaran cepat & aman.</p>
+            </div>
+
+            <div class="text-center p-4 fade-in">
+                <p class="text-xl font-semibold mb-2 text-emerald-600">Rasa Terjamin</p>
+                <p class="text-gray-600 text-sm">Masakan enak dan selalu fresh.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="testimoni" class="py-20 px-6 bg-white">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 fade-in text-emerald-700">Testimoni Pelanggan</h2>
+        <div class="max-w-xl mx-auto relative">
+
+            <div class="carousel-container">
+                <div class="carousel-track" id="testimonial-track">
+                    <div class="carousel-item">
+                        <div class="p-6 border rounded-xl shadow-lg bg-gradient-to-br from-white to-teal-50/30">
+                            <p class="text-gray-700 italic mb-4 text-center text-lg">“Pelayanannya **cepat** dan masakannya **enak banget**. Terbaik!”</p>
+                            <p class="font-semibold text-emerald-700 text-center">— Rini, Tasikmalaya</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="p-6 border rounded-xl shadow-lg bg-gradient-to-br from-white to-emerald-50/30">
+                            <p class="text-gray-700 italic mb-4 text-center text-lg">“Harga **bersahabat**, rasa **mantap**, sangat recommended. Prosesnya syar'i.”</p>
+                            <p class="font-semibold text-emerald-700 text-center">— Andri, Singaparna</p>
+                        </div>
+                    </div>
+                     <div class="carousel-item">
+                        <div class="p-6 border rounded-xl shadow-lg bg-gradient-to-br from-white to-teal-50/30">
+                            <p class="text-gray-700 italic mb-4 text-center text-lg">“Paketnya **lengkap**, tidak perlu repot. Terima kasih Fadhila Aqiqah!”</p>
+                            <p class="font-semibold text-emerald-700 text-center">— Keluarga Budi, Ciamis</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button id="prev-btn" class="absolute top-1/2 -left-10 transform -translate-y-1/2 bg-emerald-600 text-white p-3 rounded-full shadow-lg hover:bg-emerald-700 transition">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button id="next-btn" class="absolute top-1/2 -right-10 transform -translate-y-1/2 bg-emerald-600 text-white p-3 rounded-full shadow-lg hover:bg-emerald-700 transition">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+
+        </div>
+    </section>
+
+    <section id="kontak" class="py-20 px-6 bg-gradient-to-r from-emerald-600 to-teal-500 text-white text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 fade-in">Siap Melaksanakan Aqiqah?</h2>
+        <p class="max-w-xl mx-auto text-white/90 fade-in">Kami siap membantu menyediakan paket aqiqah terbaik untuk keluarga Anda.</p>
+        <a href="https://wa.me/6281234567890" target="_blank" class="mt-6 inline-block px-10 py-4 bg-white text-emerald-700 rounded-full shadow-xl font-semibold hover:bg-gray-100 transition fade-in">Chat Sekarang</a>
+    </section>
+
+    <a href="https://wa.me/6281234567890" target="_blank" class="fixed bottom-6 right-6 bg-emerald-600 text-white p-4 rounded-full shadow-lg text-xl hover:bg-emerald-700 transition z-50">💬</a>
+
+    <button id="scrollToTopBtn" class="fixed bottom-24 right-6 bg-emerald-600 text-white p-3 rounded-full shadow-lg text-lg hover:bg-emerald-700 transition z-50">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script>
+        // FADE-IN ANIMATION (Animasi Muncul)
+        const items = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('show');
+          });
+        }, { threshold: 0.2 });
+
+        items.forEach(item => observer.observe(item));
+
+        // TYPING ANIMATION (Animasi Mengetik)
+        const words = ["lengkap", "higienis", "halal", "syar'i"];
+        let wordIndex = 0;
+        let charIndex = 0;
+        const typingElement = document.getElementById('typing-text');
+        let isDeleting = false;
+        let typingSpeed = 150;
+        let deletingSpeed = 75;
+        let delayBetweenWords = 1500;
+
+        function type() {
+          const currentWord = words[wordIndex];
+          if (!isDeleting) {
+            if (charIndex < currentWord.length) {
+              typingElement.textContent += currentWord.charAt(charIndex);
+              charIndex++;
+              setTimeout(type, typingSpeed);
+            } else {
+              isDeleting = true;
+              setTimeout(type, delayBetweenWords);
+            }
+          } else {
+            if (charIndex > 0) {
+              typingElement.textContent = currentWord.substring(0, charIndex - 1);
+              charIndex--;
+              setTimeout(type, deletingSpeed);
+            } else {
+              isDeleting = false;
+              wordIndex = (wordIndex + 1) % words.length;
+              setTimeout(type, typingSpeed);
+            }
+          }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(type, 500);
+            
+            // Inisialisasi posisi carousel
+            updateCarousel();
+        });
+        
+        // TESTIMONIAL CAROUSEL (Slider Testimoni)
+        const track = document.getElementById('testimonial-track');
+        const itemsList = document.querySelectorAll('.carousel-item');
+        const nextBtn = document.getElementById('next-btn');
+        const prevBtn = document.getElementById('prev-btn');
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            // Perlu memeriksa apakah elemen ada sebelum mengakses properti
+            if (itemsList.length === 0) return; 
+            const itemWidth = itemsList[0].clientWidth;
+            const offset = -currentIndex * itemWidth;
+            track.style.transform = `translateX(${offset}px)`;
+        }
+
+        nextBtn.addEventListener('click', () => {
+            if (currentIndex < itemsList.length - 1) {
+                currentIndex++;
+            } else {
+                currentIndex = 0; // Kembali ke awal
+            }
+            updateCarousel();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+            } else {
+                currentIndex = itemsList.length - 1; // Kembali ke akhir
+            }
+            updateCarousel();
+        });
+
+        window.addEventListener('resize', updateCarousel);
+        
+        
+        // 🚀 SCROLL TO TOP & NAVBAR TOGGLE JS 🚀
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        // Fungsi untuk mengaktifkan/menonaktifkan menu mobile
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Tampilkan/Sembunyikan tombol "Kembali ke Atas"
+        window.onscroll = function() { scrollFunction() };
+
+        function scrollFunction() {
+            // Tampilkan jika scroll lebih dari 300px (atau tinggi Hero Section)
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                scrollToTopBtn.classList.add('show');
+            } else {
+                scrollToTopBtn.classList.remove('show');
+            }
+        }
+
+        // Ketika tombol diklik, gulir ke atas
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+    </script>
+
+</body>
+</html>
