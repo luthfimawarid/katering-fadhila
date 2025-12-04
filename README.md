@@ -1,4 +1,4 @@
-FADHILA AQIQAH – Landing Page
+## FADHILA AQIQAH – Landing Page
 
 Landing page modern, minimalis, dan elegan untuk layanan Fadhila Aqiqah Pusat Tasikmalaya.
 Dibuat menggunakan HTML + TailwindCSS, cocok sebagai portofolio dan untuk UMKM yang membutuhkan website cepat & responsif.
